@@ -188,6 +188,10 @@ setScoreDisplay((score)=>score+3)
        onDragLeave={(e)=>e.preventDefault()}
        onDrop={dragDrop}
        onDragEnd={dragEnd}
+       onTouchCancel={dragEnd}
+       onTouchEnd={dragEnd}
+       onTouchMove={dragDrop}
+       onTouchStart={dragStart}
        />
       ))}
       </div>
