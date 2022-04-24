@@ -1,0 +1,9 @@
+Things remaining
+
+
+1. Set Goal Score and Timer
+2. Adding Touch Event so that user can play on mobile or tab or touch devices
+3. Make a better UI with responsiveness
+
+
+
