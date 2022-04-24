@@ -157,30 +157,41 @@ function Candies() {
     const isRowOfFour = checkForRowOfFour();
     const isColumnOfThree = checkForColumnOfThree();
     const isRowOfThree = checkForRowOfThree();
-   
+    // if(validMove && (isColumnOfFour || isRowOfFour || isColumnOfThree || isRowOfThree)){
+    //   console.log("HEY")
+    //   currentColorArrangement[squareBeingDraggedId] =
+    //     squareBeingReplaced.getAttribute("src");
+    //   currentColorArrangement[squareBeingReplacedId] =
+    //     squareBeingDragged.getAttribute("src");
+    // }
+    if (validMove ) {
       currentColorArrangement[squareBeingDraggedId] =
         squareBeingReplaced.getAttribute("src");
       currentColorArrangement[squareBeingReplacedId] =
         squareBeingDragged.getAttribute("src");
- 
-    if(validMove && squareBeingReplacedId && (isColumnOfFour||isRowOfFour||isColumnOfThree||isRowOfThree)){
-      // setSquareBeingDragged(null)
-      // setSquareBeingReplaced(null)
-      // currentColorArrangement[squareBeingDraggedId]=squareBeingReplaced.getAttribute('src')
-      // currentColorArrangement[squareBeingReplacedId]=squareBeingDragged.getAttribute('src')
-      currentColorArrangement[squareBeingDraggedId] =
-        squareBeingReplaced.getAttribute("src");
+    } 
+    else {
+      alert("not a valid move");
+    }
+    if (
+      validMove &&
+      squareBeingReplacedId &&
+      (isColumnOfFour || isRowOfFour || isColumnOfThree || isRowOfThree)
+    ) {
+      setSquareBeingDragged(null);
+      setSquareBeingReplaced(null);
+    } else {
       currentColorArrangement[squareBeingReplacedId] =
+        squareBeingReplaced.getAttribute("src");
+      currentColorArrangement[squareBeingDraggedId] =
         squareBeingDragged.getAttribute("src");
+      setCurrentColorArrangement([...currentColorArrangement]);
     }
-    else{
-      // currentColorArrangement[squareBeingReplacedId]=squareBeingReplaced.getAttribute('src')
-      // currentColorArrangement[squareBeingDraggedId]=squareBeingDragged.getAttribute('src')
-      // setCurrentColorArrangement([...currentColorArrangement])
-      alert("not a valid move")
-    }
-    
-    if (validMove && (isColumnOfFour || isRowOfFour || isColumnOfThree || isRowOfThree)) {
+
+    if (
+      validMove &&
+      (isColumnOfFour || isRowOfFour || isColumnOfThree || isRowOfThree)
+    ) {
       setScoreDisplay((score) => score + 3);
     }
   };
@@ -251,4 +262,3 @@ function Candies() {
 }
 
 export default Candies;
-
