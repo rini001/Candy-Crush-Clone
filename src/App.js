@@ -140,8 +140,9 @@ else{
   currentColorArrangement[squareBeingDraggedId]=squareBeingDragged.getAttribute('src')
   setCurrentColorArrangement([...currentColorArrangement])
 }
-
+if(isColumnOfFour||isRowOfFour||isColumnOfThree||isRowOfThree){
 setScoreDisplay((score)=>score+3)
+}
 }
 // console.log(scoreDisplay)
   const createBoard=()=>{
